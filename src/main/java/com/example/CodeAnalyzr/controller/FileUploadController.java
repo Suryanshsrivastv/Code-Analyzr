@@ -12,6 +12,7 @@ import java.util.Map;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/files")
+@CrossOrigin
 public class FileUploadController {
     private CodeAnalysisService qnAService;
 
