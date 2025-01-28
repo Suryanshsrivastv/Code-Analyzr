@@ -16,6 +16,10 @@ import java.util.Map;
 public class FileUploadController {
     private CodeAnalysisService qnAService;
 
+    @GetMapping("/home")
+    public String hello(){
+        return "hello guuys the api is working";
+    }
     @PostMapping("/upload")
     public ResponseEntity<String> askQuestion(@RequestParam("file") MultipartFile file) throws IOException {
 //        String question = payload.get("question");
