@@ -3,6 +3,7 @@ package com.example.CodeAnalyzr.service;
 import com.example.CodeAnalyzr.Models.HuggingFaceRequest;
 import com.example.CodeAnalyzr.Models.HuggingFaceResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -11,7 +12,8 @@ import java.util.Collections;
 
 @Component
 public class ResumeService {
-    private final String apiKey = "Bearer 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";
+    @Value("${huggingface.api.key")
+    private String apiKey;
     private final String url = "https://huggingface.co/api/inference-proxy/together/v1/chat/completions";
 
     @Autowired
